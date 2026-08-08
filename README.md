@@ -1,75 +1,47 @@
-# React + TypeScript + Vite
+# Wedding Website
+Personal project as I ~~was voluntold~~ graciously wanted to help my sister and my new brother in law.
+This project was initially built with a [React + TypeScript + Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts)
+template with ESLint, and is hosted on Cloudflare with a custom domain.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Link
+https://fcawedding.com/
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Required packages](#required-packages)
+- [Installation & Setup](#installation--setup)
+- [Dev Mode](#dev-mode)
+- [Deployment](#deployment)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Required packages
+- **Node.js**: `v22.x`
+- **npm**: `v10.x`
+  - Alternative package managers such as **pnpm** or **yarn** should work as well
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### Installation & Setup
+> [!NOTE]
+> Ensure you are using the correct Node.js version before attempting to setup project.
+1. Clone the repository
+```
+git clone https://github.com/jsimpauco/fcawedding-website.git
+cd fcawedding-website
+```
+2. Install packages from `packages.json`
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### Dev Mode
+Using Vite's development mode, you can make changes to the project and by saving the file, see the changes in real time.
+To start the local development server:
 ```
+npm run dev
+```
+Click the link after running to open the localhost server.
+> [!IMPORTANT]
+> Ensure you save the file before looking at changes you have made.
+
+### Deployment
+Only the `main` branch is deployed to the Cloudflare hosted website.
+Once a push is made to `main`, Cloudflare will automatically build and update the website.
+> [!IMPORTANT]
+> Ensure pushes are made to the correct branch to ensure full website functionality.
